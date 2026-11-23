@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with: Axialis IconVectors - www.axialis.com -->
+<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="background" x1="0%" y1="0%" x2="75%" y2="100%">
+      <stop offset="0" stop-color="#414650"/>
+      <stop offset="0.5" stop-color="#252930"/>
+      <stop offset="1" stop-color="#15191f"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#727985"/>
+      <stop offset="0.4" stop-color="#424852"/>
+      <stop offset="1" stop-color="#333a44"/>
+    </linearGradient>
+  </defs>
+  <rect id="tile" fill="url(#background)" stroke="url(#edge)" stroke-width="3" x="64" y="64" width="896" height="896" rx="224"/>
+  <g id="blocks">
+    <rect id="block-1-1" fill="#ff373b" x="192" y="184" width="72" height="72" rx="18"/>
+    <rect id="block-2-1" fill="#ff373b" x="192" y="280" width="72" height="72" rx="18"/>
+    <rect id="block-2-2" fill="#ff373b" x="284" y="280" width="72" height="72" rx="18"/>
+    <rect id="block-3-1" fill="#ffda08" x="192" y="376" width="72" height="72" rx="18"/>
+    <rect id="block-3-2" fill="#ffda08" x="284" y="376" width="72" height="72" rx="18"/>
+    <rect id="block-3-3" fill="#ffda08" x="376" y="376" width="72" height="72" rx="18"/>
+    <rect id="block-4-1" fill="#ffda08" x="192" y="472" width="72" height="72" rx="18"/>
+    <rect id="block-4-2" fill="#ffda08" x="284" y="472" width="72" height="72" rx="18"/>
+    <rect id="block-4-3" fill="#ffda08" x="376" y="472" width="72" height="72" rx="18"/>
+    <rect id="block-5-1" fill="#29c934" x="192" y="568" width="72" height="72" rx="18"/>
+    <rect id="block-5-2" fill="#29c934" x="284" y="568" width="72" height="72" rx="18"/>
+    <rect id="block-5-3" fill="#29c934" x="376" y="568" width="72" height="72" rx="18"/>
+    <rect id="block-6-1" fill="#29c934" x="192" y="664" width="72" height="72" rx="18"/>
+    <rect id="block-6-2" fill="#29c934" x="284" y="664" width="72" height="72" rx="18"/>
+    <rect id="block-6-3" fill="#29c934" x="376" y="664" width="72" height="72" rx="18"/>
+    <rect id="block-7-1" fill="#29c934" x="192" y="760" width="72" height="72" rx="18"/>
+    <rect id="block-7-2" fill="#29c934" x="284" y="760" width="72" height="72" rx="18"/>
+    <rect id="block-7-3" fill="#29c934" x="376" y="760" width="72" height="72" rx="18"/>
+  </g>
+  <path id="arrow" transform="translate(0 280) scale(1 0.8702290076335878) translate(0 -272)" fill="#f7f8fa" d="M610,300C610,281.33,619.33,272,638,272L706,272C724.67,272,734,281.33,734,300L734,574L808,574C824,574,832,580,832,592C832,597.33,829.67,603,825,609L691,784C678.33,800,665.67,800,653,784L519,609C514.33,603,512,597.33,512,592C512,580,520,574,536,574L610,574z"/>
+</svg>

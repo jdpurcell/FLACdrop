@@ -1,0 +1,51 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    name: macOS arm64 DMG
+    runs-on: macos-15
+    timeout-minutes: 60
+    env:
+      ARCH: arm64
+      MACOSX_DEPLOYMENT_TARGET: '13.0'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Build app
+        run: bash scripts/build-app.sh
+
+      - name: Test encoder
+        run: bash scripts/test-encoder.sh
+
+      - name: Sign, package, and notarize
+        shell: pwsh
+        env:
+          APPLE_DEVID_APP_CERT_DATA: ${{ secrets.APPLE_DEVID_APP_CERT_DATA }}
+          APPLE_DEVID_APP_CERT_PASS: ${{ secrets.APPLE_DEVID_APP_CERT_PASS }}
+          APPLE_ID_USER: ${{ secrets.APPLE_ID_USER }}
+          APPLE_ID_PASS: ${{ secrets.APPLE_ID_PASS }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          foreach ($name in @('APPLE_DEVID_APP_CERT_DATA', 'APPLE_DEVID_APP_CERT_PASS', 'APPLE_ID_USER', 'APPLE_ID_PASS')) {
+            if (-not [Environment]::GetEnvironmentVariable($name)) {
+              throw "Missing required secret: $name"
+            }
+          }
+          . ./scripts/install_cert_macos.ps1
+          if (-not $env:APPLE_DEVID_APP_CERT_NAME) { throw 'Certificate installation did not return a signing identity.' }
+          bash scripts/package-release.sh
+
+      - name: Upload DMG
+        uses: actions/upload-artifact@v7
+        with:
+          path: dist/FLACdrop-*-macOS-arm64.dmg
+          if-no-files-found: error
+          archive: false

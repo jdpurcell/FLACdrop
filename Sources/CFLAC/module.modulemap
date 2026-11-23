@@ -1,0 +1,4 @@
+module CFLAC [system] {
+    header "shim.h"
+    export *
+}
